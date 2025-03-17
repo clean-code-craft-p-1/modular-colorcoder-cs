@@ -1,4 +1,4 @@
-name: Telco ColorCoder 
+name: Build and Run 
 
 on: [push, pull_request]
 
@@ -25,9 +25,6 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
-    - name: Resharper
-      uses: glassechidna/resharper-action@master
-      with:
-        solution: TelCo.ColorCoder.sln
+
     - name: Run the App
       run: dotnet run --project TelCo.ColorCoder 
